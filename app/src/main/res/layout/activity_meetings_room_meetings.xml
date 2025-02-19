@@ -1,0 +1,933 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/mrd_bg"
+    tools:context=".MeetingsRoomMeetings">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/topView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="15dp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/logo"
+                android:layout_width="@dimen/_220sdp"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_alignParentStart="true"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:scaleType="fitStart" />
+
+            <LinearLayout
+                android:id="@+id/linearMRD"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:gravity="end"
+                android:layout_marginEnd="@dimen/_12sdp"
+                android:orientation="vertical"
+                android:visibility="gone">
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/meetingRoom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:gravity="end"
+                    android:layout_marginBottom="@dimen/_1sdp"
+                    android:fontFamily="@font/arbfont_dinnext_bold"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/_17sdp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/presentTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:gravity="end"
+                    android:layout_marginBottom="@dimen/_2sdp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/_12sdp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearTRD"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_gravity="center"
+                android:layout_marginEnd="@dimen/_12sdp"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="gone">
+                <TextView
+                    android:id="@+id/txtTRDmeetingRoom"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/arbfont_dinnext_bold"
+                    android:text=""
+                    android:textColor="@color/darkBlue"
+                    android:textSize="@dimen/_22sdp" />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1.5dp"
+            android:layout_marginBottom="@dimen/_1sdp"
+            android:background="#8d94a3" />
+
+        <LinearLayout
+            android:id="@+id/mrd"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="@dimen/_16sdp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/_16sdp"
+                        android:layout_marginBottom="@dimen/_2sdp"
+                        android:clipToPadding="true"
+                        app:cardBackgroundColor="#fff"
+                        app:cardCornerRadius="@dimen/_9sdp"
+                        app:cardElevation="3dp"
+                        app:cardMaxElevation="@dimen/_3sdp">
+
+                        <RelativeLayout
+                            android:id="@+id/m_time"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@color/nextmeeting">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/m_Status"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:fontFamily="@font/arbfonts_dinnextttlrabic_regular"
+                                android:textAlignment="center"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/_11sdp" />
+
+                            <View
+                                android:id="@+id/cardline"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_1sdp"
+                                android:layout_below="@+id/m_Status"
+                                android:layout_marginTop="@dimen/_4sdp"
+                                android:background="@color/white" />
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_below="@id/cardline">
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/m_timeTextTrd"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    android:fontFamily="@font/arbfont_dinnext_bold"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/_21ssp" />
+                            </RelativeLayout>
+                        </RelativeLayout>
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.6">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/Confidential"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:fontFamily="@font/arbfont_dinnext_bold"
+                        android:text="Confidential"
+                        android:textColor="@color/app_tcolor"
+                        android:textSize="@dimen/_17sdp"
+                        android:visibility="gone" />
+
+                    <LinearLayout
+                        android:id="@+id/meetinglayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_16sdp"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/_5sdp"
+                            android:fontFamily="@font/arbfonts_dinnextttlrabic_medium"
+                            android:text="Host"
+                            android:textColor="#C1A648"
+                            android:textSize="@dimen/_14sdp" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/_5sdp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <com.provizit.provizitscheduler.CircleImageView
+                                android:id="@+id/hostImg"
+                                android:layout_width="@dimen/_16sdp"
+                                android:layout_height="@dimen/_16sdp"
+                                android:src="@drawable/ic_user" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/hostName"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_4sdp"
+                                android:fontFamily="@font/arbfonts_dinnextttlrabic_medium"
+                                android:singleLine="true"
+                                android:text="--------"
+                                android:textColor="@color/app_tcolor"
+                                android:textSize="@dimen/_11sdp" />
+                        </LinearLayout>
+
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/inviteesT"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:layout_marginBottom="@dimen/_5sdp"
+                            android:fontFamily="@font/arbfonts_dinnextttlrabic_medium"
+                            android:text="Invitees"
+                            android:textColor="#C1A648"
+                            android:textSize="@dimen/_14sdp" />
+
+                        <LinearLayout
+                            android:id="@+id/invitee1layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/_6sdp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <com.provizit.provizitscheduler.CircleImageView
+                                android:id="@+id/invitee1Image"
+                                android:layout_width="@dimen/_16sdp"
+                                android:layout_height="@dimen/_16sdp"
+                                android:src="@drawable/ic_user" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/invitee1Name"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_4sdp"
+                                android:fontFamily="@font/arbfonts_dinnextttlrabic_medium"
+                                android:singleLine="true"
+                                android:text="--------"
+                                android:textColor="@color/app_tcolor"
+                                android:textSize="@dimen/_11sdp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/invitee2layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <com.provizit.provizitscheduler.CircleImageView
+                                android:id="@+id/invitee2Image"
+                                android:layout_width="@dimen/_16sdp"
+                                android:layout_height="@dimen/_16sdp"
+                                android:src="@drawable/ic_user" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/invitee2Name"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_4sdp"
+                                android:fontFamily="@font/arbfonts_dinnextttlrabic_medium"
+                                android:singleLine="true"
+                                android:text="--------"
+                                android:textColor="@color/app_tcolor"
+                                android:textSize="@dimen/_11sdp" />
+                        </LinearLayout>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/count"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="end"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:background="@drawable/border"
+                            android:fontFamily="@font/arbfonts_dinnextttlrabic_regular"
+                            android:paddingStart="@dimen/_10sdp"
+                            android:paddingTop="@dimen/_2sdp"
+                            android:paddingEnd="@dimen/_10sdp"
+                            android:paddingBottom="@dimen/_2sdp"
+                            android:text="+2 more.."
+                            android:textColor="@color/app_tcolor"
+                            android:textSize="@dimen/_11sdp"
+                            android:visibility="gone" />
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="@dimen/_16sdp"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:orientation="vertical">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/meetingsRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+                <LinearLayout
+                    android:id="@+id/cardNoMeetings"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginBottom="@dimen/_5sdp"
+                        android:clipToPadding="true"
+                        app:cardBackgroundColor="#fff"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="3dp"
+                        app:cardMaxElevation="7dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/m_border"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:padding="@dimen/_4sdp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/arbfonts_dinnextttlrabic_medium"
+                                android:text="--------"
+                                android:textColor="@color/app_tcolor"
+                                android:textSize="@dimen/_10ssp" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginBottom="@dimen/_5sdp"
+                        android:clipToPadding="true"
+                        app:cardBackgroundColor="#fff"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="3dp"
+                        app:cardMaxElevation="7dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/m_border"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:padding="@dimen/_4sdp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/arbfonts_dinnextttlrabic_medium"
+                                android:text="--------"
+                                android:textColor="@color/app_tcolor"
+                                android:textSize="@dimen/_10ssp" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginBottom="@dimen/_5sdp"
+                        android:clipToPadding="true"
+                        app:cardBackgroundColor="#fff"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="3dp"
+                        app:cardMaxElevation="7dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/m_border"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:padding="@dimen/_4sdp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/arbfonts_dinnextttlrabic_medium"
+                                android:text="--------"
+                                android:textColor="@color/app_tcolor"
+                                android:textSize="@dimen/_10ssp" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginBottom="@dimen/_5sdp"
+                        android:clipToPadding="true"
+                        app:cardBackgroundColor="#fff"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="3dp"
+                        app:cardMaxElevation="7dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/m_border"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:padding="@dimen/_4sdp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/arbfonts_dinnextttlrabic_medium"
+                                android:text="--------"
+                                android:textColor="@color/app_tcolor"
+                                android:textSize="@dimen/_10ssp" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginBottom="@dimen/_5sdp"
+                        android:clipToPadding="true"
+                        app:cardBackgroundColor="#fff"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="3dp"
+                        app:cardMaxElevation="7dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/m_border"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:padding="@dimen/_4sdp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/arbfonts_dinnextttlrabic_medium"
+                                android:text="--------"
+                                android:textColor="@color/app_tcolor"
+                                android:textSize="@dimen/_10ssp" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginBottom="@dimen/_5sdp"
+                        android:clipToPadding="true"
+                        app:cardBackgroundColor="#fff"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="3dp"
+                        app:cardMaxElevation="7dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/m_border"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:padding="@dimen/_4sdp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/arbfonts_dinnextttlrabic_medium"
+                                android:text="--------"
+                                android:textColor="@color/app_tcolor"
+                                android:textSize="@dimen/_10ssp" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/trd"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/linearBottom"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.4"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_10sdp">
+
+                    <LinearLayout
+                        android:id="@+id/meetinglayoutTrd"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:id="@+id/cardTrdStatus"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_2sdp"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:layout_marginEnd="@dimen/_2sdp"
+                            android:layout_marginBottom="@dimen/_5sdp"
+                            android:background="@drawable/card_nextmeet">
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/txtStatusTrd"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_8sdp"
+                                android:layout_marginEnd="@dimen/_8sdp"
+                                android:fontFamily="@font/roboto_regular"
+                                android:padding="@dimen/_5sdp"
+                                android:text=""
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/_12sdp" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:visibility="gone"
+                            android:id="@+id/txtRuningTimer"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/soon"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:text="00:00"
+                            style="@style/regular_font"
+                            android:textSize="@dimen/_15sdp"/>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/timeTrd"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:layout_marginBottom="@dimen/_5sdp"
+                            android:fontFamily="@font/roboto_bold"
+                            android:text="00:00 PM - 00:00 PM"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="@dimen/_18ssp"
+                            android:textAllCaps="true"/>
+
+                        <TextView
+                            android:id="@+id/subjectTrd"
+                            android:layout_width="@dimen/_200sdp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/_5sdp"
+                            android:textAlignment="center"
+                            android:fontFamily="@font/arbfonts_dinnextttlrabic_medium"
+                            android:maxLines="2"
+                            android:text="Introduction of Provizit Visitor Management System"
+                            android:textColor="@color/darkGray"
+                            android:textSize="@dimen/_16ssp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_3sdp"
+                            android:fontFamily="@font/roboto_regular"
+                            android:text="By"
+                            android:textColor="@color/darkGray"
+                            android:textSize="@dimen/_10ssp" />
+
+                        <TextView
+                            android:id="@+id/hostName_trd"
+                            android:layout_width="@dimen/_200sdp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/_5sdp"
+                            android:textAlignment="center"
+                            android:fontFamily="@font/arbfonts_dinnextttlrabic_medium"
+                            android:singleLine="true"
+                            android:text="Murali Krishna Kondimi"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="@dimen/_12ssp" />
+
+                    </LinearLayout>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/confidentialDataTrd"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/arbfont_dinnext_bold"
+                        android:text="Confidential"
+                        android:textColor="@color/app_tcolor"
+                        android:textSize="@dimen/_17sdp"
+                        android:visibility="gone" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/m_timeText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_regular"
+                        android:padding="@dimen/_12sdp"
+                        android:textAlignment="center"
+                        android:text="test"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_10sdp"
+                        android:visibility="gone" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:visibility="gone"
+                        android:id="@+id/m_image"
+                        android:layout_width="@dimen/_250sdp"
+                        android:layout_height="@dimen/_100sdp"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:alpha="0.2"
+                        android:src="@drawable/available_ic"/>
+
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/viewTRD"
+                    android:layout_width="@dimen/_2sdp"
+                    android:layout_height="match_parent"
+                    android:background="@color/lightGray" />
+
+                <LinearLayout
+                    android:id="@+id/linearListTRD"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_5sdp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:fontFamily="@font/roboto_bold"
+                        android:text="Later Today"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12sdp"
+                        android:textStyle="bold" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/meetingsRecyclerViewTrd"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        tools:itemCount="2"
+                        tools:listitem="@layout/training_room_item" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearBottom"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_alignParentBottom="true"
+                android:background="@color/darkBlue"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txtTRDDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_12sdp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/arbfonts_dinnextttlrabic_regular"
+                    android:gravity="center_vertical"
+                    android:text="test"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_12sdp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txtTRDTime"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_12sdp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="end"
+                    android:text="test"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_17sdp" />
+
+            </LinearLayout>
+
+
+            <!--            <androidx.cardview.widget.CardView-->
+            <!--                android:id="@+id/card_view_trd"-->
+            <!--                android:layout_width="650dp"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_gravity="center_horizontal"-->
+            <!--                android:layout_marginBottom="@dimen/_2sdp"-->
+            <!--                android:layout_marginEnd="@dimen/_5sdp"-->
+            <!--                android:layout_marginStart="@dimen/_5sdp"-->
+            <!--                android:layout_marginTop="@dimen/_5sdp"-->
+            <!--                android:clipToPadding="true"-->
+            <!--                app:cardBackgroundColor="@color/nextmeeting"-->
+            <!--                app:cardCornerRadius="@dimen/_7sdp"-->
+            <!--                app:cardElevation="@dimen/_1sdp"-->
+            <!--                app:cardMaxElevation="@dimen/_1sdp">-->
+
+            <!--                <RelativeLayout-->
+            <!--                    android:id="@+id/m_time_trd"-->
+            <!--                    android:layout_width="match_parent"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:background="@color/nextmeeting">-->
+
+            <!--                    <RelativeLayout-->
+            <!--                        android:layout_width="match_parent"-->
+            <!--                        android:layout_height="wrap_content">-->
+
+            <!--                        <TextView-->
+            <!--                            android:id="@+id/confidentialDataTrd"-->
+            <!--                            android:layout_width="wrap_content"-->
+            <!--                            android:layout_height="wrap_content"-->
+            <!--                            android:layout_centerInParent="true"-->
+            <!--                            android:fontFamily="@font/arbfont_dinnext_bold"-->
+            <!--                            android:text="Confidential"-->
+            <!--                            android:textColor="@color/app_tcolor"-->
+            <!--                            android:textSize="@dimen/_17sdp"-->
+            <!--                            android:visibility="gone" />-->
+
+            <!--                        <LinearLayout-->
+            <!--                            android:id="@+id/meetinglayoutTrd"-->
+            <!--                            android:layout_width="match_parent"-->
+            <!--                            android:layout_height="wrap_content"-->
+            <!--                            android:layout_marginHorizontal="@dimen/_2sdp"-->
+            <!--                            android:layout_marginTop="@dimen/_23sdp"-->
+            <!--                            android:layout_marginBottom="@dimen/_2sdp"-->
+            <!--                            android:background="@drawable/bottom_radius_border"-->
+            <!--                            android:orientation="vertical"-->
+            <!--                            android:paddingVertical="@dimen/_3sdp">-->
+
+            <!--                            <LinearLayout-->
+            <!--                                android:id="@+id/l1_trd"-->
+            <!--                                android:layout_width="match_parent"-->
+            <!--                                android:layout_height="wrap_content"-->
+            <!--                                android:layout_marginStart="@dimen/_10sdp"-->
+            <!--                                android:layout_marginEnd="@dimen/_10sdp"-->
+            <!--                                android:orientation="vertical">-->
+
+            <!--                                <TextView-->
+            <!--                                    android:id="@+id/subject_trd"-->
+            <!--                                    android:layout_width="match_parent"-->
+            <!--                                    android:layout_height="wrap_content"-->
+            <!--                                    android:fontFamily="@font/arbfonts_dinnextttlrabic_medium"-->
+            <!--                                    android:singleLine="true"-->
+            <!--                                    android:text="Introduction of Provizit Visitor Management System"-->
+            <!--                                    android:textColor="@color/black"-->
+            <!--                                    android:textSize="@dimen/_14sdp" />-->
+
+            <!--                                <LinearLayout-->
+            <!--                                    android:layout_width="match_parent"-->
+            <!--                                    android:layout_height="wrap_content"-->
+            <!--                                    android:layout_marginTop="@dimen/_5sdp"-->
+            <!--                                    android:layout_marginBottom="@dimen/_5sdp"-->
+            <!--                                    android:orientation="horizontal">-->
+
+            <!--                                    <LinearLayout-->
+            <!--                                        android:layout_width="match_parent"-->
+            <!--                                        android:layout_height="wrap_content"-->
+            <!--                                        android:layout_weight="1"-->
+            <!--                                        android:orientation="horizontal">-->
+
+            <!--                                        <LinearLayout-->
+            <!--                                            android:layout_width="45dp"-->
+            <!--                                            android:layout_height="45dp"-->
+            <!--                                            android:layout_gravity="center_vertical"-->
+            <!--                                            android:gravity="center"-->
+            <!--                                            android:background="@drawable/round_icon_bg">-->
+            <!--                                            <androidx.appcompat.widget.AppCompatImageView-->
+            <!--                                                android:layout_width="30dp"-->
+            <!--                                                android:layout_height="30dp"-->
+            <!--                                                android:src="@drawable/host" />-->
+            <!--                                        </LinearLayout>-->
+
+            <!--                                        <TextView-->
+            <!--                                            android:id="@+id/hostName_trd"-->
+            <!--                                            android:layout_width="wrap_content"-->
+            <!--                                            android:layout_height="wrap_content"-->
+            <!--                                            android:layout_gravity="center_vertical"-->
+            <!--                                            android:layout_marginStart="@dimen/_7sdp"-->
+            <!--                                            android:fontFamily="@font/arbfonts_dinnextttlrabic_regular"-->
+            <!--                                            android:text="Murali Krishna Kondimi"-->
+            <!--                                            android:textColor="@android:color/black"-->
+            <!--                                            android:textSize="@dimen/_12ssp" />-->
+            <!--                                    </LinearLayout>-->
+
+            <!--                                    <LinearLayout-->
+            <!--                                        android:layout_width="match_parent"-->
+            <!--                                        android:layout_height="wrap_content"-->
+            <!--                                        android:layout_weight="1"-->
+            <!--                                        android:orientation="horizontal">-->
+
+            <!--                                        <LinearLayout-->
+            <!--                                            android:layout_width="45dp"-->
+            <!--                                            android:layout_height="45dp"-->
+            <!--                                            android:gravity="center"-->
+            <!--                                            android:layout_gravity="center_vertical"-->
+            <!--                                            android:background="@drawable/round_icon_bg">-->
+            <!--                                            <androidx.appcompat.widget.AppCompatImageView-->
+            <!--                                                android:layout_width="30dp"-->
+            <!--                                                android:layout_height="30dp"-->
+            <!--                                                android:src="@drawable/clock" />-->
+            <!--                                        </LinearLayout>-->
+
+            <!--                                        <TextView-->
+            <!--                                            android:id="@+id/time_trd"-->
+            <!--                                            android:layout_width="wrap_content"-->
+            <!--                                            android:layout_height="wrap_content"-->
+            <!--                                            android:layout_gravity="center_vertical"-->
+            <!--                                            android:layout_marginStart="@dimen/_7sdp"-->
+            <!--                                            android:fontFamily="@font/arbfonts_dinnextttlrabic_regular"-->
+            <!--                                            android:text="00:00 PM - 00:00 PM"-->
+            <!--                                            android:textColor="@android:color/black"-->
+            <!--                                            android:textSize="@dimen/_12ssp" />-->
+            <!--                                    </LinearLayout>-->
+
+            <!--                                </LinearLayout>-->
+
+            <!--                            </LinearLayout>-->
+
+
+            <!--                        </LinearLayout>-->
+
+            <!--                        <TextView-->
+            <!--                            android:id="@+id/m_timeText"-->
+            <!--                            android:layout_width="wrap_content"-->
+            <!--                            android:layout_height="wrap_content"-->
+            <!--                            android:layout_centerInParent="true"-->
+            <!--                            android:padding="@dimen/_20sdp"-->
+            <!--                            android:fontFamily="@font/arbfont_dinnext_bold"-->
+            <!--                            android:textColor="@color/white"-->
+            <!--                            android:textSize="@dimen/_21ssp" />-->
+
+            <!--                    </RelativeLayout>-->
+
+            <!--                    <TextView-->
+            <!--                        android:id="@+id/m_StatusTrd"-->
+            <!--                        android:layout_width="wrap_content"-->
+            <!--                        android:layout_height="@dimen/_23sdp"-->
+            <!--                        android:layout_marginStart="@dimen/_12sdp"-->
+            <!--                        android:fontFamily="@font/arbfonts_dinnextttlrabic_regular"-->
+            <!--                        android:text=" "-->
+            <!--                        android:gravity="center_vertical"-->
+            <!--                        android:textColor="@color/white"-->
+            <!--                        android:textSize="@dimen/_10sdp" />-->
+
+
+            <!--                </RelativeLayout>-->
+            <!--            </androidx.cardview.widget.CardView>-->
+
+
+            <!--            <TextView-->
+            <!--                android:id="@+id/txtNextHeader"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_marginStart="@dimen/_5sdp"-->
+            <!--                android:fontFamily="@font/arbfont_dinnext_bold"-->
+            <!--                android:text="Next"-->
+            <!--                android:textStyle="bold"-->
+            <!--                android:textColor="@color/app_tcolor"-->
+            <!--                android:textSize="@dimen/_11sdp" />-->
+            <!--            <androidx.recyclerview.widget.RecyclerView-->
+            <!--                android:id="@+id/meetingsRecyclerViewTrd"-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="0dp"-->
+            <!--                android:layout_gravity="center_horizontal"-->
+            <!--                android:layout_weight="0.7"-->
+            <!--                tools:itemCount="2"-->
+            <!--                tools:listitem="@layout/training_room_item" />-->
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="@dimen/_16sdp"
+        android:fontFamily="@font/arbfonts_dinnextttlrabic_regular"
+        android:text="www.provizit.com"
+        android:textAlignment="center"
+        android:textColor="#888787"
+        android:textSize="@dimen/_6sdp" />
+
+</RelativeLayout>
