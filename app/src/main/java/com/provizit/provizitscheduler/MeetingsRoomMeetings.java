@@ -1893,7 +1893,6 @@ public class MeetingsRoomMeetings extends AppCompatActivity {
                 holder.empty.setVisibility(View.VISIBLE);
             } else if (p_time < meetigsArrayList.get(0).getStart() + timezone() && meetigsArrayList.get(0).getStart() + timezone() - p_time >= 3600) {
 
-
                 holder.empty.setVisibility(View.GONE);
                 holder.l1.setVisibility(View.VISIBLE);
                 holder.l2.setVisibility(View.VISIBLE);
