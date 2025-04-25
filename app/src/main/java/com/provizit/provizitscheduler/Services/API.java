@@ -13,15 +13,11 @@ import retrofit2.http.Query;
 
 public interface API {
 
-
-
-
     @GET("masters/getuserDetails")
     Call<Model> getuserDetails(@Header("Authorization") String Bearer,@Header("DeviceId") String header, @Query("id") String id);
 
     @POST("setup/schedulerLogin")
     Call<Model> getuserLogin(@Header("Authorization") String Bearer,@Header("DeviceId") String header,@Body JsonObject jsonBody);
-
 
     @GET("company/getmeetingrooms")
     Call<Model1> getmeetingrooms(@Header("Authorization") String Bearer,@Header("DeviceId") String header,@Query("id") String id, @Query("location") String location);
@@ -35,10 +31,8 @@ public interface API {
     @GET("setup/getappointments")
     Call<OutlookModel> getappointments(@Query("comp_id") String comp_id, @Query("rm_id") String rm_id, @Query("start") Long start, @Query("end") Long end, @Query("type") String type);
 
-     @GET("microsoft/meetingRoomData")
+    @GET("microsoft/meetingRoomData")
     Call<OutlookModel> getMicrosoftMeetings(@Header("Authorization") String Bearer,@Header("DeviceId") String header, @Query("id") String id);
-
-
 
 
  }
