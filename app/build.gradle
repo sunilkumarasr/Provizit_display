@@ -11,7 +11,7 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
-    //    Key password: Ftech@123
+//    Key password: Ftech@123
 //    key alias: Key0
 
     buildTypes {
